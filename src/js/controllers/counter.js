@@ -18,6 +18,18 @@ function LikeCounter ($scope) {
       $scope.s = 's';
     }
   };
+
+  $scope.minusLike = function () {
+    console.log('like');
+    count--;
+    console.log(count);
+    $scope.count = count;
+    if(count === 1){
+      $scope.s = '';
+    }else{
+      $scope.s = 's';
+    }
+  };
 }
 
 LikeCounter.$inject = ['$scope'];

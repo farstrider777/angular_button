@@ -10,7 +10,14 @@
   <body ng-app="app">
     <div class="container">
       <div ng-controller="LikeCounter">
-        <button ng-click="addLike()">{{ count }} like{{ s }}</button>
+        <button ng-class="myVar"  ng-click="addLike()">{{ count }} like{{ s }}</button>
+        <button ng-class="endVar" ng-click="minusLike()">{{ count }} like{{ s }}</button>
+      </div>
+      <div>
+        <input id="setbtn" type="button" value="set" ng-click="myVar='invisible'">
+        <input id="clearbtn" type="button" value="clear" ng-click="myVar=''">
+
+
       </div>
       <div ng-controller="GreetController">
         <input type="text" ng-model="name" />
