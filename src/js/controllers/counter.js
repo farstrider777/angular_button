@@ -1,5 +1,6 @@
 //import angular from 'angular';
 var count = 0;
+var toggle = true;
 
 function LikeCounter ($scope) {
   console.log('test');
@@ -9,7 +10,11 @@ function LikeCounter ($scope) {
 
   $scope.addLike = function () {
     console.log('like');
-    count++;
+    if(toggle){
+      count++;
+    }else{
+      count--;
+    }
     console.log(count);
     $scope.count = count;
     if(count === 1){
@@ -20,14 +25,10 @@ function LikeCounter ($scope) {
   };
 
   $scope.minusLike = function () {
-    console.log('like');
-    count--;
-    console.log(count);
-    $scope.count = count;
-    if(count === 1){
-      $scope.s = '';
+    if(toggle){
+      toggle = false
     }else{
-      $scope.s = 's';
+      toggle = true
     }
   };
 }
